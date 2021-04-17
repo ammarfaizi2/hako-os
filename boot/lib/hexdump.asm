@@ -13,7 +13,7 @@ print_hexdump:
 	cli
 	pusha
 	mov	ah, 0x0e ; TTY mode
-	mov	bx, hex_chars
+	mov	bx, .hex_chars
 	xor	cl, cl
 .pr_loop:
 	and	cl, 0xf
@@ -49,5 +49,5 @@ print_hexdump:
 .pr_ret_direct:
 	ret
 
-hex_chars:
+.hex_chars:
 	db	"0123456789abcdef"
