@@ -4,10 +4,11 @@
 ; Copyright (C) 2021  Ammar Faizi <ammarfaizi2@gmail.com> https://www.facebook.com/ammarfaizi2
 ;
 
+
 ; void print_hexdump(void *di, size_t si);
 print_hexdump:
 	test	si, si
-	jz	.pr_ret_direct
+	jz	.pr_ret_direct	; Skip everything, we have nothing to print.
 
 	cli
 	pusha
@@ -18,7 +19,7 @@ print_hexdump:
 	and	cl, 0xf
 	jnz	.pr_hex
 
-	; Print newline
+	; Print a CRLF `\r\n`
 	mov	al, 0x0d
 	int	0x10
 	mov	al, 0x0a
