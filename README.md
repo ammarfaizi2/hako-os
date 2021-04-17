@@ -1,8 +1,8 @@
 
 # Hako OS
-I want to know about computer better, so I decided to start my own OS. Because
-creating an OS is not only about programming, it is also about how computer
-really works.
+I want to know about computer better, so I decided to start writing my own OS.
+Because creating an OS is not only about programming, it is also about how
+computer really works.
 
 
 # Author
