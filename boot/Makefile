@@ -8,10 +8,14 @@
 NASM = nasm
 QEMU = qemu-system-x86_64
 
-all: hello
 
-hello: hello.asm lib/print.asm lib/hexdump.asm
-	$(NASM)	-fbin hello.asm -o hello
+$(BASE_DIR)/boot/hello:	$(BASE_DIR)/boot/hello.asm \
+			$(BASE_DIR)/boot/lib/print.asm \
+			$(BASE_DIR)/boot/lib/hexdump.asm
+	cd $(BASE_DIR)/boot; $(NASM) -fbin $(<) -o $(@)
 
-run: hello
-	$(QEMU) hello
+boot: $(BASE_DIR)/boot/hello
+	$(QEMU) $(<)
+
+
+.PHONY: boot
