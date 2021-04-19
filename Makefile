@@ -34,7 +34,7 @@ $(error Source directory cannot contain spaces or colons)
 endif
 
 
-all: boot
+all:
 
 include boot/Makefile
 
